@@ -3,84 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 02</title>
+    <title>Panel de Volumen</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Ejercicio a: Ventana con iconos y formulario -->
-    <section class="window">
-        <div class="icons">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#f44336"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#4caf50"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2196f3"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#ffeb3b"/></svg>
-        </div>
-
-        <form class="form">
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Email">
-            <input type="text" placeholder="Teléfono">
-            <label><input type="checkbox"> Acepto los términos</label>
-            <div class="buttons">
-                <button type="submit">Enviar</button>
-                <button type="reset">Resetear</button>
+    <div class="container">
+        <div class="header">
+            <div class="icons-right">
+                <i class="fa-regular fa-sun"></i>
+                <i class="fa-solid fa-shield"></i>
+                <i class="fa-regular fa-clipboard"></i>
+                <i class="fa-solid fa-code"></i>
             </div>
-        </form>
-    </section>
-
-    <!-- Ejercicio b: Card con control de color RGB -->
-    <section class="color-card">
-        <div class="color-display" id="colorBox"></div>
-        <div class="color-controls">
+        </div>
+        <div class="content">
             <div class="slider-group">
-                <label>R: <input type="range" min="0" max="255" id="rRange"> <input type="number" min="0" max="255" id="rNum"></label>
-                <label>G: <input type="range" min="0" max="255" id="gRange"> <input type="number" min="0" max="255" id="gNum"></label>
-                <label>B: <input type="range" min="0" max="255" id="bRange"> <input type="number" min="0" max="255" id="bNum"></label>
+                <label>Media volume</label>
+                <div class="slider-row">
+                    <i class="fa-solid fa-volume-up"></i>
+                    <input type="range" min="0" max="100" value="30">
+                </div>
+            </div>
+            
+            <div class="slider-group">
+                <label>Alarm volume</label>
+                <div class="slider-row">
+                    <i class="fa-regular fa-circle"></i>
+                    <input type="range" min="0" max="100" value="20">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+            </div>
+
+            <div class="slider-group">
+                <label>Icon click callback</label>
+                <div class="slider-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="range" min="0" max="100" value="40">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
             </div>
         </div>
-    </section>
-
-    <script>
-        const rRange = document.getElementById("rRange");
-        const gRange = document.getElementById("gRange");
-        const bRange = document.getElementById("bRange");
-
-        const rNum = document.getElementById("rNum");
-        const gNum = document.getElementById("gNum");
-        const bNum = document.getElementById("bNum");
-
-        const colorBox = document.getElementById("colorBox");
-
-        function updateColor() {
-            const r = parseInt(rRange.value);
-            const g = parseInt(gRange.value);
-            const b = parseInt(bRange.value);
-
-            colorBox.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-
-            rNum.value = r;
-            gNum.value = g;
-            bNum.value = b;
-        }
-
-        function updateSliders() {
-            rRange.value = rNum.value;
-            gRange.value = gNum.value;
-            bRange.value = bNum.value;
-            updateColor();
-        }
-
-        rRange.addEventListener("input", updateColor);
-        gRange.addEventListener("input", updateColor);
-        bRange.addEventListener("input", updateColor);
-
-        rNum.addEventListener("input", updateSliders);
-        gNum.addEventListener("input", updateSliders);
-        bNum.addEventListener("input", updateSliders);
-
-        updateColor(); // Set initial color
-    </script>
-
+    </div>
 </body>
 </html>
