@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Panel de volumen</title>
+  <title>Ejercicios A y B</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Ejercicio A -->
   <div class="panel">
     <!-- Cabecera -->
     <header class="panel-header">
@@ -51,5 +52,70 @@
       </section>
     </main>
   </div>
+
+  <!-- Ejercicio B -->
+  <div class="card">
+    <!-- Parte 1 -->
+    <div class="color-box" id="colorBox"></div>
+
+    <!-- Parte 2 -->
+    <div class="controls">
+      <div class="control">
+        <label for="rRange">R:</label>
+        <input type="range" id="rRange" min="0" max="255" value="120">
+        <input type="number" id="rNumber" min="0" max="255" value="120">
+      </div>
+      <div class="control">
+        <label for="gRange">G:</label>
+        <input type="range" id="gRange" min="0" max="255" value="180">
+        <input type="number" id="gNumber" min="0" max="255" value="180">
+      </div>
+      <div class="control">
+        <label for="bRange">B:</label>
+        <input type="range" id="bRange" min="0" max="255" value="200">
+        <input type="number" id="bNumber" min="0" max="255" value="200">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Referencias
+    const colorBox = document.getElementById("colorBox");
+
+    const rRange = document.getElementById("rRange");
+    const gRange = document.getElementById("gRange");
+    const bRange = document.getElementById("bRange");
+
+    const rNumber = document.getElementById("rNumber");
+    const gNumber = document.getElementById("gNumber");
+    const bNumber = document.getElementById("bNumber");
+
+    function updateColor() {
+      const r = parseInt(rRange.value);
+      const g = parseInt(gRange.value);
+      const b = parseInt(bRange.value);
+
+      // sincronizar inputs numéricos
+      rNumber.value = r;
+      gNumber.value = g;
+      bNumber.value = b;
+
+      // aplicar color
+      colorBox.style.backgroundColor = `rgb(${r},${g},${b})`;
+    }
+
+    // Sliders
+    [rRange, gRange, bRange].forEach(input => {
+      input.addEventListener("input", updateColor);
+    });
+
+    // Inputs numéricos
+    rNumber.addEventListener("input", () => { rRange.value = rNumber.value; updateColor(); });
+    gNumber.addEventListener("input", () => { gRange.value = gNumber.value; updateColor(); });
+    bNumber.addEventListener("input", () => { bRange.value = bNumber.value; updateColor(); });
+
+    // Inicial
+    updateColor();
+  </script>
 </body>
 </html>
