@@ -12,7 +12,7 @@ body {
 .window {
   width: 400px;
   background: #2a2a2a;
-  border-radius: 8px;
+  border-radius: 3px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   overflow: hidden;
 }
@@ -20,7 +20,7 @@ body {
 .toolbar {
   display: flex;
   justify-content: flex-end;
-  background: #1b1b1b;
+  background: rgb(100, 100, 100);
   padding: 8px;
 }
 
