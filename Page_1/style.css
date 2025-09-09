@@ -25,9 +25,8 @@ body {
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
-  fill: #bbb;
+  width: 15px;
+  height: 15px;
   margin-left: 10px;
   cursor: pointer;
 }
@@ -115,10 +114,7 @@ form {
 }
 
 /* Botones */
-.buttons {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 button {
   background: #444;
