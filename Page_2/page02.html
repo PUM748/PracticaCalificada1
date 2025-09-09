@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Volumen</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Panel de volumen</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="icons-right">
-                <i class="fa-regular fa-sun"></i>
-                <i class="fa-solid fa-shield"></i>
-                <i class="fa-regular fa-clipboard"></i>
-                <i class="fa-solid fa-code"></i>
-            </div>
-        </div>
-        <div class="content">
-            <div class="slider-group">
-                <label>Media volume</label>
-                <div class="slider-row">
-                    <i class="fa-solid fa-volume-up"></i>
-                    <input type="range" min="0" max="100" value="30">
-                </div>
-            </div>
-            
-            <div class="slider-group">
-                <label>Alarm volume</label>
-                <div class="slider-row">
-                    <i class="fa-regular fa-circle"></i>
-                    <input type="range" min="0" max="100" value="20">
-                    <i class="fa-regular fa-clock"></i>
-                </div>
-            </div>
+  <div class="panel">
+    <!-- Cabecera -->
+    <header class="panel-header">
+      <div class="header-spacer"></div>
+      <div class="header-icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Brillo" class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942751.png" alt="Escudo" class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/1250/1250615.png" alt="Portapapeles" class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Código" class="icon">
+      </div>
+    </header>
 
-            <div class="slider-group">
-                <label>Icon click callback</label>
-                <div class="slider-row">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="range" min="0" max="100" value="40">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
+    <!-- Contenido -->
+    <main class="panel-body">
+      <!-- Media volume -->
+      <section class="slider-group">
+        <label>Media volume</label>
+        <div class="row">
+          <img src="https://cdn-icons-png.flaticon.com/512/727/727240.png" alt="Volumen" class="small-icon">
+          <input type="range" min="0" max="100" value="30" class="slider">
         </div>
-    </div>
+      </section>
+
+      <!-- Alarm volume -->
+      <section class="slider-group">
+        <label>Alarm volume</label>
+        <div class="row">
+          <img src="https://cdn-icons-png.flaticon.com/512/3602/3602145.png" alt="Alarma" class="small-icon">
+          <input type="range" min="0" max="100" value="20" class="slider">
+          <img src="https://cdn-icons-png.flaticon.com/512/3602/3602145.png" alt="Alarma activada" class="small-icon">
+        </div>
+      </section>
+
+      <!-- Search callback -->
+      <section class="slider-group">
+        <label>Icon click callback</label>
+        <div class="row">
+          <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Buscar" class="small-icon">
+          <input type="range" min="0" max="100" value="40" class="slider">
+          <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Buscar" class="small-icon">
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
