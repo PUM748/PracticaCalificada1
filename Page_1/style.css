@@ -29,6 +29,7 @@ body {
   height: 15px;
   margin-left: 10px;
   cursor: pointer;
+  fill: #fff;
 }
 
 form {
@@ -85,7 +86,7 @@ form {
   transition: 0.3s;
 }
 
-.drop-box.active {
+.drop-box:hover {
   border-color: #00bcd4;
   background: rgba(0,188,212,0.1);
 }
@@ -97,7 +98,7 @@ form {
   margin-right: 10px;
 }
 
-#file-name {
+.drop-box p {
   font-size: 14px;
   color: #aaa;
 }
@@ -114,7 +115,10 @@ form {
 }
 
 /* Botones */
-
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
 
 button {
   background: #444;
